@@ -133,11 +133,13 @@ export default function BillionaireApp() {
         onModeChange={setMode}
       />
 
-      <BillionairePicker
-        billionaires={billionaires}
-        activeIdx={billIdx}
-        onSelect={switchBillionaire}
-      />
+      {mode === 'spend' && (
+        <BillionairePicker
+          billionaires={billionaires}
+          activeIdx={billIdx}
+          onSelect={switchBillionaire}
+        />
+      )}
 
       <FortuneBar
         remaining={remaining}
