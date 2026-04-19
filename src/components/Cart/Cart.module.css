@@ -125,3 +125,83 @@
   border-color: #aa3333;
   color: #cc6666;
 }
+
+/* Hide the handle on desktop */
+.cartHandle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .cartArea {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 0;
+    background: #0d200d;
+    border-top: 1px solid #2a5a2a;
+    border-radius: 14px 14px 0 0;
+    max-height: 56px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .cartAreaOpen {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .cartHandle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 56px;
+    padding: 0 1.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .cartHandleLeft {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cartHandleIcon {
+    font-size: 18px;
+  }
+
+  .cartHandleCount {
+    font-size: 13px;
+    color: #8ab88a;
+  }
+
+  .cartHandleRight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cartHandleTotal {
+    font-size: 13px;
+    font-weight: 500;
+    color: #4caf50;
+  }
+
+  .cartChevron {
+    font-size: 12px;
+    color: #4a7a4a;
+  }
+
+  .cartContent {
+    padding: 0 1.25rem 1.5rem;
+  }
+
+  .cartRemove {
+    padding: 4px;
+  }
+}

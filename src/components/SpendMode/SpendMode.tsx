@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import type { Item, CartItem } from '@/types';
 import ItemCard from '@/components/ItemCard/ItemCard';
 import Cart from '@/components/Cart/Cart';
@@ -41,6 +42,8 @@ export default function SpendMode({
   onShare,
   onSurprise,
 }: SpendModeProps) {
+  const [cartOpen, setCartOpen] = useState(false);
+
   return (
     <div className={styles.mainGrid}>
       <div className={styles.shopArea}>
@@ -84,6 +87,8 @@ export default function SpendMode({
         onRemove={onRemove}
         onClear={onClear}
         onShare={onShare}
+        cartOpen={cartOpen}
+        onCartToggle={() => setCartOpen(o => !o)}
       />
     </div>
   );

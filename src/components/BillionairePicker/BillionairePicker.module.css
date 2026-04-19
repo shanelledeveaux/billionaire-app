@@ -46,3 +46,17 @@
   color: #4a6a4a;
   font-weight: 400;
 }
+
+@media (max-width: 768px) {
+  .billBar {
+    padding: 0.75rem 1.25rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .billBar::-webkit-scrollbar {
+    display: none;
+  }
+}

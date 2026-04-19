@@ -71,3 +71,9 @@
 .itemCardFlash {
   animation: buyFlash 0.4s ease-out forwards;
 }
+
+@media (max-width: 768px) {
+  .itemBuyBtn {
+    padding: 11px 7px;
+  }
+}

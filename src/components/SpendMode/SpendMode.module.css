@@ -73,3 +73,19 @@
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
 }
+
+@media (max-width: 768px) {
+  .mainGrid {
+    padding-bottom: 56px;
+  }
+
+  .shopArea {
+    padding: 1.25rem;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .itemsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
