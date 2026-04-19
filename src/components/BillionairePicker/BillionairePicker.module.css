@@ -1,0 +1,48 @@
+.billBar {
+  background: #0d200d;
+  border-bottom: 1px solid #1a3a1a;
+  padding: 1rem 2.5rem;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.billLabel {
+  font-size: 11px;
+  color: #4a7a4a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+.billBtn {
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 12px;
+  border: 1px solid #2a4a2a;
+  background: transparent;
+  color: #8ab88a;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.billBtn:hover {
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+.billBtnActive {
+  background: #1a3a1a;
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+.billBtnWorth {
+  font-size: 10px;
+  color: #4a6a4a;
+  font-weight: 400;
+}

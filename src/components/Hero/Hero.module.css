@@ -1,0 +1,59 @@
+.hero {
+  padding: 3rem 2.5rem 2rem;
+  border-bottom: 1px solid #1a3a1a;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4a9a4a;
+  margin-bottom: 1rem;
+}
+
+.headline {
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 500;
+  line-height: 1.05;
+  color: #e8f5e8;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.name { color: #e8f5e8; }
+.accent { color: #4caf50; }
+
+.sub {
+  font-size: 14px;
+  color: #6a8a6a;
+  margin-bottom: 1.75rem;
+}
+
+.modeToggle {
+  display: flex;
+  gap: 8px;
+}
+
+.modeBtn {
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid #2a5a2a;
+  background: transparent;
+  color: #6a9a6a;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.modeBtn:hover {
+  border-color: #4caf50;
+  color: #a8d8a8;
+}
+
+.modeBtnActive {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #0a1a0a;
+}

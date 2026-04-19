@@ -1,0 +1,38 @@
+.celebration {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.celebrationEmoji {
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+
+.celebrationText {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 500;
+  color: #e8f5e8;
+  margin-bottom: 0.5rem;
+}
+
+.celebrationSub {
+  font-size: 14px;
+  color: #5a8a5a;
+  margin-bottom: 1.5rem;
+}
+
+.celebrationReset {
+  padding: 10px 24px;
+  border-radius: 99px;
+  border: 1px solid #3a6a3a;
+  background: transparent;
+  color: #6a9a6a;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.celebrationReset:hover {
+  border-color: #4caf50;
+  color: #4caf50;
+}

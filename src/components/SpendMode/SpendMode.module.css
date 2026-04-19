@@ -1,0 +1,75 @@
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+}
+
+@media (max-width: 768px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.shopArea {
+  padding: 1.75rem 2.5rem;
+  border-right: 1px solid #1a3a1a;
+}
+
+.shopHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.catTabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.catTab {
+  padding: 5px 16px;
+  border-radius: 99px;
+  font-size: 12px;
+  border: 1px solid #2a4a2a;
+  background: transparent;
+  color: #6a8a6a;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.catTab:hover {
+  color: #a8c8a8;
+  border-color: #3a6a3a;
+}
+
+.catTabActive {
+  background: #1a3a1a;
+  border-color: #4a8a4a;
+  color: #8acd8a;
+}
+
+.surpriseBtn {
+  padding: 5px 14px;
+  border-radius: 99px;
+  font-size: 12px;
+  border: 1px solid #3a5a3a;
+  background: transparent;
+  color: #6a9a6a;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.surpriseBtn:hover {
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+.itemsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
