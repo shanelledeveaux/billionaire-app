@@ -10,11 +10,12 @@ interface CartProps {
   onRemove: (name: string) => void;
   onClear: () => void;
   onShare: () => void;
+  isSharing?: boolean;
   cartOpen?: boolean;
   onCartToggle?: () => void;
 }
 
-export default function Cart({ cart, spent, onRemove, onClear, onShare, cartOpen, onCartToggle }: CartProps) {
+export default function Cart({ cart, spent, onRemove, onClear, onShare, isSharing, cartOpen, onCartToggle }: CartProps) {
   const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
 
   return (
@@ -36,8 +37,8 @@ export default function Cart({ cart, spent, onRemove, onClear, onShare, cartOpen
         <div className={styles.cartHeader}>
           <p className={styles.cartTitle}>Your cart</p>
           {cart.length > 0 && (
-            <button className={styles.shareBtn} onClick={onShare}>
-              Share
+            <button className={styles.shareBtn} onClick={onShare} disabled={isSharing}>
+              {isSharing ? 'Saving…' : 'Share'}
             </button>
           )}
         </div>

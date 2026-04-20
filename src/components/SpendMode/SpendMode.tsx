@@ -22,6 +22,7 @@ interface SpendModeProps {
   onRemove: (name: string) => void;
   onClear: () => void;
   onShare: () => void;
+  isSharing: boolean;
   onSurprise: () => void;
 }
 
@@ -40,6 +41,7 @@ export default function SpendMode({
   onRemove,
   onClear,
   onShare,
+  isSharing,
   onSurprise,
 }: SpendModeProps) {
   const [cartOpen, setCartOpen] = useState(false);
@@ -87,6 +89,7 @@ export default function SpendMode({
         onRemove={onRemove}
         onClear={onClear}
         onShare={onShare}
+        isSharing={isSharing}
         cartOpen={cartOpen}
         onCartToggle={() => setCartOpen(o => !o)}
       />

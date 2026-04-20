@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect, useRef } from 'react';
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import type { Mode, CartItem, Item } from '@/types';
 import { billionaires, categories, items, taxPrograms } from '@/data/billionaires';
 import { formatBillions } from '@/utils/format';
@@ -9,8 +9,10 @@ import Hero from '@/components/Hero/Hero';
 import BillionairePicker from '@/components/BillionairePicker/BillionairePicker';
 import FortuneBar from '@/components/FortuneBar/FortuneBar';
 import EarningsCounter from '@/components/EarningsCounter/EarningsCounter';
+import ShareCard from '@/components/ShareCard/ShareCard';
 import SpendMode from '@/components/SpendMode/SpendMode';
 import TaxMode from '@/components/TaxMode/TaxMode';
+import Footer from '@/components/Footer/Footer';
 import styles from './BillionaireApp.module.css';
 
 export default function BillionaireApp() {
@@ -22,8 +24,10 @@ export default function BillionaireApp() {
   const [billCount, setBillCount] = useState(400);
   const [toast, setToast] = useState<string | null>(null);
   const [flashItem, setFlashItem] = useState<string | null>(null);
+  const [isSharing, setIsSharing] = useState(false);
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const shownMilestonesRef = useRef(new Set<number>());
+  const shareCardRef = useRef<HTMLDivElement>(null);
 
   const current = billionaires[billIdx];
   const spent = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
@@ -115,18 +119,56 @@ export default function BillionaireApp() {
     setCart(newCart);
   }
 
-  function shareResults() {
-    if (cart.length === 0) return;
-    const itemList = cart
-      .map(i => `${i.qty > 1 ? `${i.qty}× ` : ''}${i.name}`)
-      .join(', ');
-    const text = `I spent ${formatBillions(spent)} of ${current.name}'s $${current.worth}B fortune!\n\nI bought: ${itemList}.\n\n${remaining > 0 ? `Still had ${formatBillions(remaining)} left over.` : 'Spent it all!'}`;
-    navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard!'));
-  }
+  const shareResults = useCallback(async () => {
+    if (cart.length === 0 || !shareCardRef.current || isSharing) return;
+    setIsSharing(true);
+    try {
+      const html2canvas = (await import('html2canvas')).default;
+      const canvas = await html2canvas(shareCardRef.current, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: null,
+      });
+      const blob = await new Promise<Blob>((resolve) =>
+        canvas.toBlob((b) => resolve(b!), 'image/png')
+      );
+      const file = new File([blob], 'billionaire-fortune.png', { type: 'image/png' });
+      if (navigator.canShare?.({ files: [file] })) {
+        await navigator.share({ files: [file], title: `I spent ${formatBillions(spent)} of ${current.name}'s fortune` });
+      } else {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'billionaire-fortune.png';
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast('Card saved!');
+      }
+    } catch {
+      showToast('Could not generate card.');
+    } finally {
+      setIsSharing(false);
+    }
+  }, [cart, isSharing, spent, current.name]);
 
   return (
     <div className={styles.app}>
       {toast && <Toast message={toast} />}
+
+      {/* Hidden capture target for html2canvas */}
+      {cart.length > 0 && (
+        <div style={{ position: 'absolute', left: '-9999px', top: 0, pointerEvents: 'none', zIndex: -1 }}>
+          <ShareCard
+            ref={shareCardRef}
+            billionaireName={current.name}
+            worth={current.worth}
+            spent={spent}
+            remaining={remaining}
+            spentPct={spentPct}
+            cart={cart}
+          />
+        </div>
+      )}
 
       <Hero
         billionaire={current}
@@ -176,6 +218,7 @@ export default function BillionaireApp() {
           onRemove={removeItem}
           onClear={() => setCart([])}
           onShare={shareResults}
+          isSharing={isSharing}
           onSurprise={surpriseMe}
         />
       )}
@@ -190,6 +233,8 @@ export default function BillionaireApp() {
           onBillCountChange={setBillCount}
         />
       )}
+
+      <Footer />
     </div>
   );
 }
