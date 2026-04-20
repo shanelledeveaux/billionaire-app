@@ -141,12 +141,14 @@ export default function BillionaireApp() {
         />
       )}
 
-      <FortuneBar
-        remaining={remaining}
-        spent={spent}
-        spentPct={spentPct}
-        totalItems={totalItems}
-      />
+      {mode === 'spend' && (
+        <FortuneBar
+          remaining={remaining}
+          spent={spent}
+          spentPct={spentPct}
+          totalItems={totalItems}
+        />
+      )}
 
       {mode === 'spend' && (
         <SpendMode

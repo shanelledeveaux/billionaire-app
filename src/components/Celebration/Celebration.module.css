@@ -1,38 +1,38 @@
 .celebration {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: var(--space-16) var(--space-8);
 }
 
 .celebrationEmoji {
   font-size: 48px;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .celebrationText {
   font-size: clamp(20px, 3vw, 28px);
-  font-weight: 500;
-  color: #e8f5e8;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
   margin-bottom: 0.5rem;
 }
 
 .celebrationSub {
-  font-size: 14px;
-  color: #5a8a5a;
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
   margin-bottom: 1.5rem;
 }
 
 .celebrationReset {
-  padding: 10px 24px;
-  border-radius: 99px;
-  border: 1px solid #3a6a3a;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--btn-ghost-border);
   background: transparent;
-  color: #6a9a6a;
-  font-size: 13px;
+  color: var(--btn-ghost-color);
+  font-size: var(--font-size-base);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all var(--duration-base) var(--ease-base);
 }
 
 .celebrationReset:hover {
-  border-color: #4caf50;
-  color: #4caf50;
+  border-color: var(--btn-ghost-border-hover);
+  color: var(--btn-ghost-color-hover);
 }

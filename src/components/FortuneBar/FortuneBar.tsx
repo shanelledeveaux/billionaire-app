@@ -1,5 +1,5 @@
-import { formatBillions } from '@/utils/format';
-import styles from './FortuneBar.module.css';
+import { formatBillions } from "@/utils/format";
+import styles from "./FortuneBar.module.css";
 
 interface FortuneBarProps {
   remaining: number;
@@ -8,9 +8,14 @@ interface FortuneBarProps {
   totalItems: number;
 }
 
-export default function FortuneBar({ remaining, spent, spentPct, totalItems }: FortuneBarProps) {
+export default function FortuneBar({
+  remaining,
+  spent,
+  spentPct,
+  totalItems,
+}: FortuneBarProps) {
   const progressColor =
-    spentPct >= 100 ? '#cc4444' : spentPct > 60 ? '#f0a020' : '#4caf50';
+    spentPct >= 100 ? "#cc4444" : spentPct > 60 ? "#f0a020" : "#4caf50";
 
   return (
     <div className={styles.fortuneBar}>
@@ -18,7 +23,9 @@ export default function FortuneBar({ remaining, spent, spentPct, totalItems }: F
         <div>
           <p className={styles.fortuneLabel}>Remaining fortune</p>
           <p className={styles.fortuneVal}>{formatBillions(remaining)}</p>
-          <p className={styles.fortuneSpent}>{formatBillions(spent)} spent so far</p>
+          <p className={styles.fortuneSpent}>
+            {formatBillions(spent)} spent so far
+          </p>
         </div>
         <div className={styles.statsRow}>
           <div className={styles.statMini}>

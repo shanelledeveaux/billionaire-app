@@ -1,61 +1,68 @@
 .hero {
-  padding: 3rem 2.5rem 2rem;
-  border-bottom: 1px solid #1a3a1a;
+  background: var(--color-bg-surface);
+  padding: var(--space-12) var(--space-10) var(--space-8);
+  border-bottom: 1px solid var(--divider);
 }
 
 .eyebrow {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-wider);
   text-transform: uppercase;
-  color: #4a9a4a;
-  margin-bottom: 1rem;
+  color: var(--color-text-accent);
+  margin-bottom: var(--space-4);
 }
 
 .headline {
   font-size: clamp(28px, 5vw, 52px);
-  font-weight: 500;
-  line-height: 1.05;
-  color: #e8f5e8;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
   margin-bottom: 0.75rem;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
-.name { color: #e8f5e8; }
-.accent { color: #4caf50; }
+.name   { color: var(--color-text-primary); }
+.accent { color: var(--color-accent); }
 
 .sub {
-  font-size: 14px;
-  color: #6a8a6a;
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
   margin-bottom: 1.75rem;
 }
 
 .modeToggle {
   display: flex;
-  gap: 8px;
+  gap: var(--space-2);
 }
 
 .modeBtn {
-  padding: 8px 20px;
-  border-radius: 99px;
-  font-size: 13px;
-  font-weight: 500;
-  border: 1px solid #2a5a2a;
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  border: 1px solid var(--btn-ghost-border);
   background: transparent;
-  color: #6a9a6a;
+  color: var(--btn-ghost-color);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all var(--duration-base) var(--ease-base);
 }
 
 .modeBtn:hover {
-  border-color: #4caf50;
-  color: #a8d8a8;
+  border-color: var(--btn-ghost-border-hover);
+  color: var(--btn-ghost-color-hover);
 }
 
 .modeBtnActive {
-  background: #4caf50;
-  border-color: #4caf50;
-  color: #0a1a0a;
+  background: var(--btn-accent-bg);
+  border-color: var(--btn-accent-bg);
+  color: var(--btn-accent-color);
+}
+
+.modeBtnActive:hover {
+  background: var(--btn-accent-bg-hover);
+  border-color: var(--btn-accent-bg-hover);
+  color: var(--btn-accent-color);
 }
 
 @media (max-width: 768px) {

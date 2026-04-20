@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import FortuneBar from "./FortuneBar";
+import "@testing-library/jest-dom";
 
 describe("FortuneBar", () => {
   it("renders remaining and spent amounts", () => {

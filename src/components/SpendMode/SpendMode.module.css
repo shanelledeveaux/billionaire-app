@@ -3,79 +3,75 @@
   grid-template-columns: 1fr 300px;
 }
 
-@media (max-width: 768px) {
-  .mainGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .shopArea {
-  padding: 1.75rem 2.5rem;
-  border-right: 1px solid #1a3a1a;
+  background: var(--color-bg-surface);
+  padding: 1.75rem var(--space-10);
+  border-right: 1px solid var(--divider);
 }
 
 .shopHeader {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-3);
   flex-wrap: wrap;
   margin-bottom: 1.25rem;
 }
 
 .catTabs {
   display: flex;
-  gap: 6px;
+  gap: var(--space-1);
   flex-wrap: wrap;
   flex: 1;
 }
 
 .catTab {
-  padding: 5px 16px;
-  border-radius: 99px;
-  font-size: 12px;
-  border: 1px solid #2a4a2a;
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--btn-ghost-border);
   background: transparent;
-  color: #6a8a6a;
+  color: var(--btn-ghost-color);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all var(--duration-base) var(--ease-base);
 }
 
 .catTab:hover {
-  color: #a8c8a8;
-  border-color: #3a6a3a;
+  color: var(--btn-ghost-color-hover);
+  border-color: var(--btn-ghost-border-hover);
 }
 
 .catTabActive {
-  background: #1a3a1a;
-  border-color: #4a8a4a;
-  color: #8acd8a;
+  background: var(--color-accent-subtle);
+  border-color: var(--color-border-accent);
+  color: var(--color-text-accent);
 }
 
 .surpriseBtn {
-  padding: 5px 14px;
-  border-radius: 99px;
-  font-size: 12px;
-  border: 1px solid #3a5a3a;
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--btn-ghost-border);
   background: transparent;
-  color: #6a9a6a;
+  color: var(--btn-ghost-color);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all var(--duration-base) var(--ease-base);
   white-space: nowrap;
 }
 
 .surpriseBtn:hover {
-  border-color: #4caf50;
-  color: #4caf50;
+  border-color: var(--btn-ghost-border-hover);
+  color: var(--btn-ghost-color-hover);
 }
 
 .itemsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
+  gap: var(--space-3);
 }
 
 @media (max-width: 768px) {
   .mainGrid {
+    grid-template-columns: 1fr;
     padding-bottom: 56px;
   }
 
