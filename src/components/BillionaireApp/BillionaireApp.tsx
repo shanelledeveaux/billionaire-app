@@ -8,6 +8,7 @@ import Toast from '@/components/Toast/Toast';
 import Hero from '@/components/Hero/Hero';
 import BillionairePicker from '@/components/BillionairePicker/BillionairePicker';
 import FortuneBar from '@/components/FortuneBar/FortuneBar';
+import EarningsCounter from '@/components/EarningsCounter/EarningsCounter';
 import SpendMode from '@/components/SpendMode/SpendMode';
 import TaxMode from '@/components/TaxMode/TaxMode';
 import styles from './BillionaireApp.module.css';
@@ -147,6 +148,15 @@ export default function BillionaireApp() {
           spent={spent}
           spentPct={spentPct}
           totalItems={totalItems}
+        />
+      )}
+
+      {mode === 'spend' && spent > 0 && (
+        <EarningsCounter
+          key={billIdx}
+          earningsPerSec={current.earningsPerSec}
+          spent={spent}
+          billionaireName={current.name}
         />
       )}
 

@@ -3,6 +3,7 @@ export type Mode = 'spend' | 'tax';
 export interface Billionaire {
   name: string;
   worth: number;
+  earningsPerSec: number; // dollars/sec based on prior-year wealth growth
   years: string;
   source: string;
 }

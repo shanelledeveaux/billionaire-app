@@ -1,9 +1,10 @@
+// earningsPerSec derived from each billionaire's 2023 Forbes net worth growth ÷ 31,557,600 seconds/yr
 export const billionaires = [
-  { name: 'Elon Musk', worth: 240, years: '3.2 million', source: 'Forbes, 2024' },
-  { name: 'Jeff Bezos', worth: 200, years: '2.7 million', source: 'Forbes, 2024' },
-  { name: 'Mark Zuckerberg', worth: 170, years: '2.3 million', source: 'Forbes, 2024' },
-  { name: 'Larry Ellison', worth: 145, years: '1.9 million', source: 'Forbes, 2024' },
-  { name: 'Warren Buffett', worth: 130, years: '1.7 million', source: 'Forbes, 2024' },
+  { name: 'Elon Musk',        worth: 240, earningsPerSec: 6100, years: '3.2 million', source: 'Forbes, 2024' },
+  { name: 'Jeff Bezos',       worth: 200, earningsPerSec:  730, years: '2.7 million', source: 'Forbes, 2024' },
+  { name: 'Mark Zuckerberg',  worth: 170, earningsPerSec: 2700, years: '2.3 million', source: 'Forbes, 2024' },
+  { name: 'Larry Ellison',    worth: 145, earningsPerSec: 1400, years: '1.9 million', source: 'Forbes, 2024' },
+  { name: 'Warren Buffett',   worth: 130, earningsPerSec:  410, years: '1.7 million', source: 'Forbes, 2024' },
 ];
 
 export const categories = ['All', 'Luxury', 'Enterprise', 'Housing', 'Healthcare', 'Education', 'Public good'];
