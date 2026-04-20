@@ -6,13 +6,23 @@ export const billionaires = [
   { name: 'Warren Buffett', worth: 130, years: '1.7 million', source: 'Forbes, 2024' },
 ];
 
-export const categories = ['All', 'Luxury', 'Housing', 'Healthcare', 'Education', 'Public good'];
+export const categories = ['All', 'Luxury', 'Enterprise', 'Housing', 'Healthcare', 'Education', 'Public good'];
 
 export const items = [
   { cat: 'Luxury', emoji: '✈️', name: 'Private 747 jumbo jet', desc: 'Full custom interior, crew quarters', price: 0.4 },
   { cat: 'Luxury', emoji: '🛥️', name: 'Gigayacht (250m)', desc: 'Helipad, submarine, pool deck', price: 0.6 },
   { cat: 'Luxury', emoji: '🏰', name: 'Blenheim Palace', desc: '18th century English estate', price: 0.085 },
   { cat: 'Luxury', emoji: '🚀', name: 'Private space trip', desc: 'Orbital flight for 4, fully catered', price: 0.055 },
+  { cat: 'Luxury', emoji: '🏈', name: 'Buy an NFL franchise', desc: 'Average 2024 team valuation', price: 5.7 },
+  { cat: 'Luxury', emoji: '🏝️', name: 'Private island chain', desc: 'Caribbean archipelago, 5 islands', price: 0.3 },
+  { cat: 'Luxury', emoji: '🤠', name: '100 mega-ranches', desc: '100,000 acres each, American West', price: 2.5 },
+  { cat: 'Luxury', emoji: '🍷', name: 'Napa Valley portfolio', desc: '50 premier wineries, full estates', price: 0.8 },
+  { cat: 'Enterprise', emoji: '⚡', name: 'Nuclear power plant', desc: 'AP1000 reactor, fully operational', price: 9.0 },
+  { cat: 'Enterprise', emoji: '🏭', name: 'Greenfield auto factory', desc: 'EV manufacturing plant, 5,000 jobs', price: 4.0 },
+  { cat: 'Enterprise', emoji: '🛢️', name: 'Oil refinery complex', desc: '300k barrel/day capacity, Gulf Coast', price: 5.5 },
+  { cat: 'Enterprise', emoji: '🌾', name: 'Revive 50k family farms', desc: 'Land, equipment, and operating capital', price: 8.0 },
+  { cat: 'Enterprise', emoji: '📺', name: 'Buy a major TV network', desc: 'National reach, full content library', price: 3.8 },
+  { cat: 'Enterprise', emoji: '🏦', name: 'Launch a national bank', desc: 'FDIC-insured, community-focused', price: 2.0 },
   { cat: 'Housing', emoji: '🏠', name: '1,000 median US homes', desc: 'At $400k each, nationwide', price: 0.4 },
   { cat: 'Housing', emoji: '🏗️', name: '10,000 affordable units', desc: 'New construction, major metro', price: 1.2 },
   { cat: 'Housing', emoji: '🏘️', name: 'End veteran homelessness', desc: 'Est. 33k unhoused veterans', price: 2.0 },
@@ -32,10 +42,16 @@ export const items = [
 ];
 
 export const taxPrograms = [
+  { emoji: '🌞', name: 'Clean energy transition', cost: 369, label: '$369B/10yr' },
+  { emoji: '🛡️', name: 'Cyber defense overhaul', cost: 20, label: '$20B' },
+  { emoji: '🎓', name: 'Debt-free community college', cost: 109, label: '$109B/10yr' },
+  { emoji: '🚀', name: 'Double NASA budget', cost: 250, label: '$250B/10yr' },
+  { emoji: '🌍', name: 'End global hunger (1yr)', cost: 45, label: '$45B/yr' },
+  { emoji: '🌾', name: 'Farm & rural support', cost: 22, label: '$22B/yr' },
   { emoji: '🏫', name: 'Free school lunches', cost: 18, label: '$18B/yr' },
   { emoji: '💊', name: 'Medicaid expansion', cost: 54, label: '$54B/yr' },
-  { emoji: '🌞', name: 'Clean energy transition', cost: 369, label: '$369B/10yr' },
-  { emoji: '🎓', name: 'Debt-free community college', cost: 109, label: '$109B/10yr' },
+  { emoji: '🚔', name: 'Police & fire grants', cost: 120, label: '$120B/10yr' },
+  { emoji: '🏗️', name: 'Roads & bridges overhaul', cost: 110, label: '$110B' },
   { emoji: '🏥', name: 'Universal pre-K', cost: 380, label: '$380B/10yr' },
-  { emoji: '🌍', name: 'End global hunger (1yr)', cost: 45, label: '$45B/yr' },
+  { emoji: '🎖️', name: 'VA healthcare expansion', cost: 50, label: '$50B/yr' },
 ];
